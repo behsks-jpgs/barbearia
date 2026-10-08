@@ -74,7 +74,7 @@ O banco `barbearia` e as coleções `usuarios` e `sessoes` são criados automati
 ## 2. Configurar o ambiente
 
 ```bash
-git clone https://github.com/SEU-USUARIO/barbearia.git
+git clone https://github.com/behsks-jpgs/barbearia.git
 cd barbearia
 cp .env.example .env
 ```
@@ -167,7 +167,3 @@ git flow release start 1.1.0
 git flow release finish 1.1.0
 git push origin main develop --tags
 ```
-
-## Documentação
-
-A documentação acadêmica (ABNT) está em `docs/`.
