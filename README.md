@@ -2,7 +2,7 @@
 
 Sistema web simples para uma barbearia com cadastro, login e logout de usuários, controle de acesso por perfil e interface com temas configuráveis. Usuários e sessões ficam armazenados no MongoDB Atlas.
 
-Autor: Bruno Dante Nogueira Alves — bruno.dante.nogue@gmail.com
+Autor: Bruno Dante  
 
 ## Funcionalidades
 
