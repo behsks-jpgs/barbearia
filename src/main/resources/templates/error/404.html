@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{${@tema.layout}}">
+<head>
+    <title>Página não encontrada</title>
+</head>
+<body>
+<section layout:fragment="conteudo" class="pagina-erro">
+    <p class="codigo-erro">404</p>
+    <h1>Página não encontrada</h1>
+    <p class="texto-suave">O endereço que você tentou abrir não existe.</p>
+    <a th:href="@{/}" class="botao">Ir para o início</a>
+</section>
+</body>
+</html>

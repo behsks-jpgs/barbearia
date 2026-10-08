@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title layout:title-pattern="$CONTENT_TITLE · $LAYOUT_TITLE" th:text="${@tema.nomeBarbearia}">Barbearia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{${@tema.css}}">
+</head>
+<body th:classappend="'tema-' + ${@tema.nome}" class="layout-lateral">
+<div class="moldura-lateral">
+    <aside th:replace="~{fragments/navegacao :: barra}"></aside>
+    <div class="coluna-principal">
+        <main class="conteudo">
+            <div th:replace="~{fragments/mensagens :: alertas}"></div>
+            <section layout:fragment="conteudo"></section>
+        </main>
+        <footer th:replace="~{fragments/rodape :: rodape}"></footer>
+    </div>
+</div>
+</body>
+</html>

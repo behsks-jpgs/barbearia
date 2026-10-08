@@ -13,7 +13,7 @@
 
     <groupId>br.com.barbearia</groupId>
     <artifactId>barbearia</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>barbearia</name>
     <description>Sistema web de barbearia com Spring Security, MongoDB Atlas e Thymeleaf</description>
 

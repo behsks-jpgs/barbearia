@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<body>
+<ul th:fragment="lista(servicos)" class="grade-servicos">
+    <li th:each="servico : ${servicos}" class="cartao cartao-servico">
+        <h3 th:text="${servico.nome}">Serviço</h3>
+        <p th:text="${servico.descricao}">Descrição</p>
+        <div class="servico-rodape">
+            <span class="servico-duracao" th:text="${servico.duracaoMinutos} + ' min'">30 min</span>
+            <span class="servico-preco"
+                  th:text="${'R$ ' + #numbers.formatDecimal(servico.preco, 1, 'POINT', 2, 'COMMA')}">R$ 0,00</span>
+        </div>
+    </li>
+</ul>
+</body>
+</html>
