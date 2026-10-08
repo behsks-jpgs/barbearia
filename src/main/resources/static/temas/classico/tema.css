@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;500;600&display=swap");
+
+:root {
+    --fonte-titulo: "DM Serif Display", Georgia, serif;
+    --fonte-texto: "Work Sans", system-ui, sans-serif;
+    --peso-titulo: 400;
+
+    --cor-fundo: #15120e;
+    --cor-barra: #1b1712;
+    --cor-cartao: #201b15;
+    --cor-campo: #15120e;
+    --cor-texto: #efe6d6;
+    --cor-titulo: #f6eddc;
+    --cor-texto-suave: #b3a690;
+    --cor-borda: #352d23;
+    --cor-borda-forte: #54473a;
+    --cor-destaque: #c9a45c;
+    --cor-sobre-destaque: #15120e;
+
+    --cor-sucesso: #8fc39a;
+    --cor-sucesso-fundo: rgba(143, 195, 154, .08);
+    --cor-erro: #e48a7c;
+    --cor-erro-fundo: rgba(228, 138, 124, .08);
+
+    --cor-poste-1: #b8342a;
+    --cor-poste-2: #f6eddc;
+    --cor-poste-3: #2f4f8a;
+
+    --raio: 4px;
+    --raio-grande: 6px;
+}

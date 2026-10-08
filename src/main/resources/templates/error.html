@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{${@tema.layout}}">
+<head>
+    <title>Erro</title>
+</head>
+<body>
+<section layout:fragment="conteudo" class="pagina-erro">
+    <p class="codigo-erro" th:text="${status}">500</p>
+    <h1>Algo deu errado</h1>
+    <p class="texto-suave">Não foi possível concluir a solicitação. Tente novamente em instantes.</p>
+    <a th:href="@{/}" class="botao">Ir para o início</a>
+</section>
+</body>
+</html>

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+    --fonte-titulo: "Space Grotesk", system-ui, sans-serif;
+    --fonte-texto: "Inter", system-ui, sans-serif;
+    --peso-titulo: 700;
+
+    --cor-fundo: #f7f6f3;
+    --cor-barra: #ffffff;
+    --cor-cartao: #ffffff;
+    --cor-campo: #ffffff;
+    --cor-texto: #1c1c1c;
+    --cor-titulo: #111111;
+    --cor-texto-suave: #5f5f5a;
+    --cor-borda: #e4e2dc;
+    --cor-borda-forte: #c9c6be;
+    --cor-destaque: #c8402b;
+    --cor-sobre-destaque: #ffffff;
+
+    --cor-sucesso: #23733a;
+    --cor-sucesso-fundo: #edf6ef;
+    --cor-erro: #b3261e;
+    --cor-erro-fundo: #fbeceb;
+
+    --cor-poste-1: #c8402b;
+    --cor-poste-2: #ffffff;
+    --cor-poste-3: #1f3f7a;
+
+    --raio: 10px;
+    --raio-grande: 16px;
+}
