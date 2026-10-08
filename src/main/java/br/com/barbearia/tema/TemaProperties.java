@@ -7,6 +7,6 @@ import org.springframework.boot.context.properties.bind.DefaultValue;
 public record TemaProperties(
         @DefaultValue("classico") String nome,
         @DefaultValue("padrao") String layout,
-        @DefaultValue("Navalha & Cia") String nomeBarbearia,
+        @DefaultValue("Barbearia") String nomeBarbearia,
         @DefaultValue("Tradição e estilo desde 1998") String slogan) {
 }
