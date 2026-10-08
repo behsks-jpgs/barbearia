@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{${@tema.layout}}">
+<head>
+    <title>Usuários</title>
+</head>
+<body>
+<section layout:fragment="conteudo">
+    <div class="cabecalho-pagina">
+        <p class="sobretitulo">Administração</p>
+        <h1>Usuários</h1>
+        <p class="texto-suave">Defina o perfil de cada conta e ative ou desative o acesso.</p>
+    </div>
+
+    <div class="tabela-rolagem">
+        <table class="tabela">
+            <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Perfil</th>
+                <th scope="col">Situação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="u : ${usuarios}"
+                th:with="proprio=${#authentication.name == u.email}"
+                th:classappend="${!u.ativo} ? 'linha-inativa'">
+                <td th:text="${u.nome}">Nome</td>
+                <td th:text="${u.email}">email</td>
+                <td>
+                    <span th:if="${proprio}" class="selo" th:text="${u.perfil.descricao}">Administrador</span>
+                    <form th:unless="${proprio}" th:action="@{/admin/usuarios/{id}/perfil(id=${u.id})}"
+                          method="post" class="formulario-linha">
+                        <label class="visualmente-oculto" th:for="'perfil-' + ${u.id}">Perfil</label>
+                        <select name="perfil" th:id="'perfil-' + ${u.id}">
+                            <option th:each="p : ${perfis}" th:value="${p}" th:text="${p.descricao}"
+                                    th:selected="${p == u.perfil}">Perfil</option>
+                        </select>
+                        <button type="submit" class="botao botao-pequeno">Salvar</button>
+                    </form>
+                </td>
+                <td>
+                    <span th:if="${proprio}" class="selo selo-ativo">Você</span>
+                    <form th:unless="${proprio}" th:action="@{/admin/usuarios/{id}/ativo(id=${u.id})}"
+                          method="post">
+                        <button type="submit" class="botao botao-pequeno botao-fantasma"
+                                th:text="${u.ativo} ? 'Desativar' : 'Ativar'">Desativar</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{${@tema.layout}}">
+<head>
+    <title>Agenda</title>
+</head>
+<body>
+<section layout:fragment="conteudo">
+    <div class="cabecalho-pagina">
+        <p class="sobretitulo" th:text="${#temporals.format(hoje, 'dd/MM/yyyy')}">01/01/2026</p>
+        <h1 th:text="'Agenda de ' + ${usuario.nome}">Agenda</h1>
+    </div>
+
+    <article class="cartao cartao-vazio">
+        <h2>Atendimentos de hoje</h2>
+        <p class="texto-suave">Nenhum atendimento marcado para hoje.</p>
+    </article>
+
+    <h2 class="titulo-secao">Tabela de serviços</h2>
+    <table class="tabela">
+        <thead>
+        <tr>
+            <th scope="col">Serviço</th>
+            <th scope="col">Duração</th>
+            <th scope="col" class="numero">Preço</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="servico : ${servicos}">
+            <td th:text="${servico.nome}">Serviço</td>
+            <td th:text="${servico.duracaoMinutos} + ' min'">30 min</td>
+            <td class="numero"
+                th:text="${'R$ ' + #numbers.formatDecimal(servico.preco, 1, 'POINT', 2, 'COMMA')}">R$ 0,00</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
