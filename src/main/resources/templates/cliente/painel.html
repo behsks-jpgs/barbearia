@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{${@tema.layout}}">
+<head>
+    <title>Meu painel</title>
+</head>
+<body>
+<section layout:fragment="conteudo">
+    <div class="cabecalho-pagina">
+        <p class="sobretitulo" th:text="${usuario.perfil.descricao}">Cliente</p>
+        <h1 th:text="'Olá, ' + ${usuario.nome}">Olá, cliente</h1>
+    </div>
+
+    <div class="grade-dupla">
+        <article class="cartao">
+            <h2>Meus dados</h2>
+            <dl class="lista-dados">
+                <dt>E-mail</dt>
+                <dd th:text="${usuario.email}">email</dd>
+                <dt>Telefone</dt>
+                <dd th:text="${usuario.telefone}">telefone</dd>
+                <dt>Cliente desde</dt>
+                <dd th:text="${usuario.criadoEm != null} ? ${#temporals.format(usuario.criadoEm, 'dd/MM/yyyy')} : '—'">
+                    data
+                </dd>
+            </dl>
+        </article>
+
+        <article class="cartao cartao-vazio">
+            <h2>Próximos horários</h2>
+            <p class="texto-suave">Você ainda não tem horários marcados.</p>
+        </article>
+    </div>
+
+    <h2 class="titulo-secao">Serviços disponíveis</h2>
+    <div th:replace="~{fragments/servicos :: lista(${servicos})}"></div>
+</section>
+</body>
+</html>
