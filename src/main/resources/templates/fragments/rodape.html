@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer th:fragment="rodape" class="rodape">
+    <p>
+        <strong th:text="${@tema.nomeBarbearia}">Barbearia</strong>
+        <span th:text="${@tema.slogan}">Slogan</span>
+    </p>
+    <p class="rodape-tema">Tema: <span th:text="${@tema.nome}">classico</span></p>
+</footer>
+</body>
+</html>
