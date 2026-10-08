@@ -5,10 +5,8 @@
 <body>
 <header th:fragment="barra" class="barra">
     <a th:href="@{/}" class="marca">
-        <span class="marca-icone" aria-hidden="true"></span>
-        <span class="marca-nome" th:text="${@tema.nomeBarbearia}">Barbearia</span>
-    </a>
-
+        <a th:href="@{/}" class="marca">
+    <span class="marca-nome" th:text="${@tema.nomeBarbearia}">Barbearia</span>
     <nav class="menu" aria-label="Navegação principal">
         <a th:href="@{/}">Início</a>
         <a sec:authorize="hasAnyRole('CLIENTE','ADMIN')" th:href="@{/cliente}">Meu painel</a>
